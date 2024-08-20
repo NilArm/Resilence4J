@@ -20,7 +20,7 @@ public String fetchProducts() {
 }
 ```
 Usage:
--Preventing Thread Starvation
+1) Preventing Thread Starvation
 
 ### 2) Circuit Breaker Pattern :
 > Monitors number of failures or errors occured within a time period and compares it aginst configured threshold, based on the result request redirection or required reponse can be send. 
@@ -46,9 +46,9 @@ resilience4j.circuitbreaker:
 // More configs can be added..
 ```
 Usage:
--Rate Limiting and Throttling
--Dependency Failures
--Load Shedding
+1) Rate Limiting and Throttling
+2) Dependency Failures
+3) Load Shedding
 
 ### 3) Retry Pattern : 
 > In case of resource(service) failure we can use Retry pattern to call same service multiple times to get the expected output.
