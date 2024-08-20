@@ -6,7 +6,7 @@
 
 ## Patterns of Resilence
 ### 1) TimeLimiter / TimeOut :
-Limits the time being spent on calling other services.
+> Limits the time being spent on calling other services.
 #### Configs:
 ```
 resilience4j.timelimiter:
@@ -14,4 +14,11 @@ resilience4j.timelimiter:
         backendA:
             timeoutDuration: 2s
             cancelRunningFuture: true
+```
+> Add @TimeLimiter annotation on the method which is calling another service.
+```
+@TimeLimiter(name = "GetProducts")
+public String fetchProducts() {
+    webclient call
+}
 ```
