@@ -2,6 +2,8 @@
 > Used for handaling errors,service_down and make application robust. 
 
 ## Patterns of Resilence
+
+
 ### 1) TimeLimiter / TimeOut :
 > Limits the time being spent on calling other services.
 #### Configs:
@@ -21,6 +23,9 @@ public String fetchProducts() {
 ```
 Usage:
 1) Preventing Thread Starvation
+
+
+
 
 ### 2) Circuit Breaker Pattern :
 > Monitors number of failures or errors occured within a time period and compares it aginst configured threshold, based on the result request redirection or required reponse can be send. 
@@ -50,6 +55,9 @@ Usage:
 2) Dependency Failures
 3) Load Shedding
 
+
+
+
 ### 3) Retry Pattern : 
 > In case of resource(service) failure we can use Retry pattern to call same service multiple times to get the expected output.
 > we can mentioned for each errors we want to call the service again.
@@ -76,9 +84,12 @@ public String fetchProducts() {
 }
 ```
 Usage: 
--Temporary Resource Exhaustion
--Rate Limiting
--Dependency Services Recovery
+1) Temporary Resource Exhaustion
+2) Rate Limiting
+3) Dependency Services Recovery
+
+
+
 
 ### 4) Rate Limiter Patter :
 > This pattern can be used to limit number of request within a specific time frame.
@@ -100,6 +111,8 @@ public String fetchProducts() {
 }
 ```
 Usage:
--DoS (Denial of Service) and DDoS (Distributed Denial of Service) attacks
--Web/data scraping
--Brute force attacks
+1) DoS (Denial of Service) and DDoS (Distributed Denial of Service) attacks
+2) Web/data scraping
+3) Brute force attacks
+
+
