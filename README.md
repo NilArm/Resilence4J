@@ -2,9 +2,8 @@
 > Used for handaling errors,service_down and make application robust. 
 
 ## Patterns of Resilence
- 
- 
-### 1) TimeLimiter / TimeOut :
+
+### 1) TimeLimiter / TimeOut :`#RRGGBB`
 > Limits the time being spent on calling other services.
 #### Configs:
 ```
