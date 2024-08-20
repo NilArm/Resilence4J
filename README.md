@@ -3,7 +3,7 @@
 
 ## Patterns of Resilence
 
-### 1) TimeLimiter / TimeOut :`#RRGGBB`
+### 1) TimeLimiter / TimeOut :
 > Limits the time being spent on calling other services.
 #### Configs:
 ```
@@ -20,7 +20,7 @@ public String fetchProducts() {
     webclient call
 }
 ```
-Usage:
+> Usage:
 1) Preventing Thread Starvation
  
  
@@ -28,7 +28,7 @@ Usage:
  
 ### 2) Circuit Breaker Pattern :
 > Monitors number of failures or errors occured within a time period and compares it aginst configured threshold, based on the result request redirection or required reponse can be send. 
-
+#### Configs:
 ![Resilience4J](/resilience4j_flowChart.webp)
 
 ```
@@ -49,7 +49,7 @@ resilience4j.circuitbreaker:
             recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
 // More configs can be added..
 ```
-Usage:
+> Usage:
 1) Rate Limiting and Throttling
 2) Dependency Failures
 3) Load Shedding
@@ -60,7 +60,7 @@ Usage:
 ### 3) Retry Pattern : 
 > In case of resource(service) failure we can use Retry pattern to call same service multiple times to get the expected output.
 > we can mentioned for each errors we want to call the service again.
-
+#### Configs:
 ```
 resilience4j.retry:
     instances:
@@ -82,7 +82,7 @@ public String fetchProducts() {
     webclient call
 }
 ```
-Usage: 
+> Usage: 
 1) Temporary Resource Exhaustion
 2) Rate Limiting
 3) Dependency Services Recovery
@@ -92,6 +92,7 @@ Usage:
  
 ### 4) Rate Limiter Patter :
 > This pattern can be used to limit number of request within a specific time frame.
+#### Configs:
 ```
 resilience4j.ratelimiter:
     instances:
@@ -109,7 +110,7 @@ public String fetchProducts() {
     webclient call
 }
 ```
-Usage:
+> Usage:
 1) DoS (Denial of Service) and DDoS (Distributed Denial of Service) attacks
 2) Web/data scraping
 3) Brute force attacks
