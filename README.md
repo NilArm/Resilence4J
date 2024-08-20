@@ -8,8 +8,10 @@
 ### 1) TimeLimiter / TimeOut :
 Limits the time being spent on calling other services.
 #### Configs:
+```
 resilience4j.timelimiter:
     instances:
         backendA:
             timeoutDuration: 2s
             cancelRunningFuture: true
+```
